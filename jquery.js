@@ -39,7 +39,7 @@ $(document).ready(function () {
                 var name = $("<div>").text(restname);
                 var location = $("<div>").text(address)
                 console.log(location)
-                $("#info-" + i).append(name);
+                $("#info-" + i).empty().append(name);
                 $("#info-" + i).append(location);
 
                 var lat = response.restaurants[i].latitude;
