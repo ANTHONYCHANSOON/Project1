@@ -40,7 +40,7 @@ $(document).ready(function () {
             var length = response.restaurants.length
             console.log(length)
 
-            for (i = 0; i < 5; i++) {
+            for (i = 0; i < length; i++) {
                 var restname = response.restaurants[i].name;
                 var address = response.restaurants[i].streetAddress;
                 console.log(address)
@@ -109,23 +109,33 @@ $(document).ready(function () {
                 }
                 // operating hours
 
-                function initMap() {
-                    var uluru = { lat: lat, lng: lon };
-                    var map = new google.maps.Map(
-                        document.getElementById('map'), { zoom: 20, center: uluru });
-                    var marker = new google.maps.Marker({ position: uluru, map: map });
-                }
+                // function initMap() {
+                //     var uluru = { lat: lat, lng: lon };
+                //     var map = new google.maps.Map(
+                //         document.getElementById('map'), { zoom: 20, center: uluru });
+                //     var marker = new google.maps.Marker({ position: uluru, map: map });
+                // }
                 var uluru = { lat: lat, lng: lon };
+                let element;
 
                 // let newmapDiv = $('<div id="test">');
                 // $('body').append(newmapDiv);
-                var map = new google.maps.Map(document.getElementById(`map-${i}`), { zoom: 20, center: uluru });
+                var map = new google.maps.Map(element = document.getElementById(`map-${i}`), { zoom: 20, center: uluru });
+                element.setAttribute('class','map');
                 var marker = new google.maps.Marker({ position: uluru, map: map });
                 console.log(map)
                 $("#results-container").show()
                 $("#search-container").hide()
                 $(".footer").show()
             }
+            
+            for(i = 4; i > length -1; i--) {
+                var bar = document.getElementById(`map-${i}`);
+                
+                bar.setAttribute('class','');
+                
+            }
+
         }).catch(function (error) {
             console.log(error)
         })
