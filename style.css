@@ -1,0 +1,122 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    color: #0C1F31;
+    background: #01579b;
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding: 5%;
+}
+
+.header {
+    color: #e1f5fe;
+    font-family: "Patua One";
+    margin-bottom: 10vh;
+}
+
+#search-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+
+.input-field label {
+    color: #e1f5fe;
+    font-family: "Patua One";
+    font-weight: lighter;
+}
+
+#location {
+    color: #e1f5fe;
+    font-family: 'Be Vietnam';
+}
+
+
+/* .select-wrapper ul li>span {
+    color: grey;
+} */
+
+.dropdown-content li>span {
+    color: #01579b !important;
+    font-family: 'Be Vietnam';
+}
+
+.btn {
+    background-color: #e1f5fe;
+    color: #01579b;
+    font-family: 'Patua One';
+    margin: 5vh auto;
+    font-size: 2em;
+}
+
+.map {
+    height: 50vh;
+    width: 100%;
+}
+
+#info-0, #info-1, #info-2, #info-3, #info-4 {
+    color: #e1f5fe;
+    margin-bottom: 5vh;
+}
+
+#info-0 h3, #info-1 h3, #info-2 h3, #info-3 h3, #info-4 h3 {
+    font-family: 'Be Vietnam';
+    font-size: 3em;
+}
+
+.footer {
+    box-sizing: border-box;
+    padding-top: 15vh;
+    color: #e1f5fe;
+    display: none;
+}
+
+.elevator {
+    text-align: center;
+    cursor: pointer;
+    width: 140px;
+    margin: auto;
+    color: #e1f5fe;
+}
+
+.elevator:hover {
+    opacity: 0.7;
+}
+
+.elevator svg {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+    color: #e1f5fe;
+}
+
+.links {
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.links a, iframe {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+iframe {
+    margin-bottom: -3px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #0C1F31;
+}
+
+
+
