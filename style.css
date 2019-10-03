@@ -19,12 +19,11 @@ body {
     margin-bottom: 10vh;
 }
 
+/* -------------- selection and search ------------ */
 #search-container {
     width: 60%;
     margin: 0 auto;
 }
-
-
 
 .input-field label {
     color: #e1f5fe;
@@ -37,16 +36,71 @@ body {
     font-family: 'Be Vietnam';
 }
 
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #e1f5fe;
+  -webkit-box-shadow: 0 1px 0 0 #e1f5fe;
+          box-shadow: 0 1px 0 0 #e1f5fe;
+}
 
-/* .select-wrapper ul li>span {
-    color: grey;
-} */
+input:not([type]):focus:not([readonly]) + label,
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #e1f5fe;
+}
+
+input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
+    border-bottom: 1px solid #e1f5fe;
+    -webkit-box-shadow: 0 1px 0 0 #e1f5fe;
+    box-shadow: 0 1px 0 0 #e1f5fe;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    border-bottom: 1px solid #e1f5fe;
+}
+
+.select-wrapper .caret {
+    fill:#e1f5fe;
+}
+
+.select-wrapper input.select-dropdown {
+    color: #e1f5fe;
+    border-bottom: 1px solid #e1f5fe;
+    font-family: "Patua One";
+}
 
 .dropdown-content li>span {
     color: #01579b !important;
     font-family: 'Be Vietnam';
 }
 
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #e1f5fe;
+}
+
+
+/* -------------- get restaurant ------------ */
 .btn {
     background-color: #e1f5fe;
     color: #01579b;
@@ -55,6 +109,8 @@ body {
     font-size: 2em;
 }
 
+
+/* -------------- map and info ------------ */
 .map {
     height: 50vh;
     width: 100%;
@@ -70,6 +126,17 @@ body {
     font-size: 3em;
 }
 
+#info-0 h4, #info-1 h4, #info-2 h4, #info-3 h4, #info-4 h4 {
+    font-family: 'Be Vietnam';
+    font-size: 1.5em;
+}
+
+#result-container {
+    width: 60%;
+}
+
+
+/* -------------- elevator ------------ */
 .footer {
     box-sizing: border-box;
     padding-top: 15vh;
@@ -89,6 +156,10 @@ body {
     opacity: 0.7;
 }
 
+.sweet-svg path {
+    color: #e1f5fe;
+}
+
 .elevator svg {
     width: 40px;
     height: 40px;
@@ -97,26 +168,5 @@ body {
     margin-bottom: 5px;
     color: #e1f5fe;
 }
-
-.links {
-    margin-top: 25px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.links a, iframe {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-iframe {
-    margin-bottom: -3px;
-}
-
-.links a {
-    text-decoration: none;
-    color: #0C1F31;
-}
-
 
 
