@@ -36,7 +36,6 @@ $(document).ready(function () {
         }
 
 
-
         if (category === null) {
             var queryURL = `https://eatstreet.com/publicapi/v1/restaurant/search?method=both&street-address=${location}`
         } else {
