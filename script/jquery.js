@@ -13,14 +13,14 @@ function initMap() {
 }
 
 $(document).ready(function () {
-    console.log("document is ready");
+    
     $('select').formSelect();
     $("#results-container").hide();
 
     $(".btn").on("click", function () {
         var location = $("#location").val()
         var category = $("#dropdowncuisine").val()
-        console.log("HERE IS CATEGORY" + category)
+        
 
 
         if (category === null) {
@@ -36,35 +36,32 @@ $(document).ready(function () {
                 "X-Access-Token": "4568a103252b360b"
             }
         }).then(function (response) {
-            console.log(response)
+            
             var length = response.restaurants.length
-            console.log(length)
+            
 
             for (i = 0; i < length; i++) {
                 var restname = response.restaurants[i].name;
                 var address = response.restaurants[i].streetAddress;
-                console.log(address)
+                
 
                 var name = $("<h3>").text(restname);
                 var location = $("<h4>").text("Address: " + address + " " + response.restaurants[i].city + " " + response.restaurants[i].zip);
-                //console.log(location)
+                
                 $("#info-" + i).empty().append(name);
                 $("#info-" + i).append(location);
 
                 var lat = response.restaurants[i].latitude;
                 var lon = response.restaurants[i].longitude;
-                //var lati = $("<div>").text(lat);
-                //var long = $("<div>").text(lon);
-                //$("#info-" + i).append(lati);
-                //$("#info-" + i).append(long);
+                
 
 
                 //operating hours ------
                 let operatinghours = new $("<div>");
                 operatinghours.text("Operating Hours: " + JSON.stringify(response.restaurants[i].hours));
-                // $("#info-" + i).append(operatinghours);
-                console.log(response.restaurants[i].hours);
-                console.log(response.restaurants[i].hours.length);
+                
+                // console.log(response.restaurants[i].hours);
+                // console.log(response.restaurants[i].hours.length);
 
                 if(response.restaurants[i].hours.Monday) {
                 let operatinghoursM = new $("<div>");
@@ -107,23 +104,15 @@ $(document).ready(function () {
                 operatinghoursY.text("Sunday: " + response.restaurants[i].hours.Sunday[0]);
                 $("#info-" + i).append(operatinghoursY);
                 }
-                // operating hours
 
-                // function initMap() {
-                //     var uluru = { lat: lat, lng: lon };
-                //     var map = new google.maps.Map(
-                //         document.getElementById('map'), { zoom: 20, center: uluru });
-                //     var marker = new google.maps.Marker({ position: uluru, map: map });
-                // }
+               
                 var uluru = { lat: lat, lng: lon };
                 let element;
 
-                // let newmapDiv = $('<div id="test">');
-                // $('body').append(newmapDiv);
                 var map = new google.maps.Map(element = document.getElementById(`map-${i}`), { zoom: 20, center: uluru });
                 element.setAttribute('class','map');
                 var marker = new google.maps.Marker({ position: uluru, map: map });
-                console.log(map)
+                
                 $("#results-container").show()
                 $("#search-container").hide()
                 $(".footer").show()
