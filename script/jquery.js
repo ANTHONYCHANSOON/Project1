@@ -46,7 +46,7 @@ $(document).ready(function () {
                 console.log(address)
 
                 var name = $("<h3>").text(restname);
-                var location = $("<div>").text("Address: " + address + " " + response.restaurants[i].city + " " + response.restaurants[i].zip);
+                var location = $("<h4>").text("Address: " + address + " " + response.restaurants[i].city + " " + response.restaurants[i].zip);
                 //console.log(location)
                 $("#info-" + i).empty().append(name);
                 $("#info-" + i).append(location);
